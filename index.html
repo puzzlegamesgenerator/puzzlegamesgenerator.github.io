@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zebra Puzzle Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-4">Zebra Puzzle Generator</h1>
+
+        <form id="puzzleForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="categoryCountInput">Number of Categories:</label>
+                    <input type="number" class="form-control" id="categoryCountInput" placeholder="Enter the number of categories" min="1">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="elementCountInput">Number of Elements per Category:</label>
+                    <input type="number" class="form-control" id="elementCountInput" placeholder="Enter the number of elements" min="1">
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="generateInputsBtn">Generate Inputs</button>
+
+            <div id="inputsContainer"></div>
+
+            <button type="button" class="btn btn-primary mt-3 d-none" id="generatePuzzleButton">Generate Puzzle</button>
+            <button type="button" class="btn btn-primary mt-3 d-none" id="downloadImageBtn" onclick="downloadimage()">Download Grid</button>
+
+            <div class="form-group  mt-3 d-one" id="generatePuzzleButton">
+                <input type="file" class="btn btn-primary form-control-file" id="exampleFormControlFile1">
+            </div>
+
+        </form>
+
+        <div id="puzzleGrid" class="mt-3"></div>
+
+    </div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

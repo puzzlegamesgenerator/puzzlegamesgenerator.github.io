@@ -1,0 +1,66 @@
+/* Add your custom styling here */
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group.category {
+    margin-top: 1rem;
+}
+
+.vertical-text {
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    text-align: center;
+    white-space: nowrap;
+}
+
+#generateInputsBtn {
+    margin-top: 1rem;
+}
+
+#generatePuzzleBtn {
+    margin-top: 1rem;
+}
+
+#puzzleGrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-table td {
+    border: 1px solid #000;
+    width: 30px;
+    height: 30px;
+}
+
+.row-title-category,
+.column-title-category {
+    text-align: center;
+}
+
+.row-title-element,
+.column-title-category {
+    padding: 0 15px;
+}
+
+.column-title-element,
+.row-title-category {
+    padding: 15px 0;
+}
+
+.row-title-element,
+.row-title-category,
+.column-title-element,
+.column-title-category {
+    border: 2px solid #000;
+    white-space: nowrap;
+}
+
+.row-title-element {
+    text-align: right;
+}
+
+.column-title-element {
+    text-align: left;
+}
