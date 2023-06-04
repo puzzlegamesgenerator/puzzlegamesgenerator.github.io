@@ -101,7 +101,13 @@ function generatePuzzle() {
 
     for (let i = 1; i < categoryCount; i++) {
         for (let j = 1; j <= elementCount; j++) {
-            gridHTML += `<th class="column-title-element vertical-text">Category ${i} Element ${j}</th>`;
+            if (i == 1 && j == 1) {
+                gridHTML += `<th class="column-title-element vertical-text first-element-horizontal">Category ${i} Element ${j}</th>`;
+            } else if (j == elementCount) {
+                gridHTML += `<th class="column-title-element vertical-text last-element-horizontal">Category ${i} Element ${j}</th>`;
+            } else {
+                gridHTML += `<th class="column-title-element vertical-text">Category ${i} Element ${j}</th>`;
+            }
         }
     }
 
@@ -110,14 +116,29 @@ function generatePuzzle() {
     // Generate the rows
     for (let i = categoryCount; i > 1; i--) {
         gridHTML += '<tr>';
-
         gridHTML += `<th rowspan="${categoryCount}" class="row-title-category vertical-text">Category ${i}</th>`;
 
         for (let j = 1; j <= elementCount; j++) {
-
-            // Add the element to the grid HTML
-            gridHTML += `<th class="row-title-element">Category ${i} Element ${j}</th>`;
-            gridHTML += `<td></td>`.repeat((i - 1) * elementCount);
+            if (i == categoryCount && j == 1) {
+                gridHTML += `<th class="row-title-element first-element-vertical">Category ${i} Element ${j}</th>`;
+            } else if (j == elementCount) {
+                gridHTML += `<th class="row-title-element last-element-vertical">Category ${i} Element ${j}</th>`;
+            } else {
+                gridHTML += `<th class="row-title-element">Category ${i} Element ${j}</th>`;
+            }
+            for (let k = 1; k <= i - 1; k++) {
+                for (let l = 1; l <= elementCount; l++) {
+                    if (l == elementCount && j == elementCount) {
+                        gridHTML += `<td class="last-element-horizontal last-element-vertical"></td>`;
+                    } else if (l == elementCount) {
+                        gridHTML += `<td class="last-element-horizontal"></td>`;
+                    } else if (j === elementCount) {
+                        gridHTML += `<td class="last-element-vertical"></td>`;
+                    } else {
+                        gridHTML += `<td></td>`;
+                    }
+                }
+            }
             gridHTML += '</tr><tr>';
         }
 

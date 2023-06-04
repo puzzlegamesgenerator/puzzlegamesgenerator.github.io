@@ -8,7 +8,6 @@
 
 .vertical-text {
     writing-mode: vertical-lr;
-    transform: rotate(-180deg);
     text-align: center;
     white-space: nowrap;
 }
@@ -33,23 +32,69 @@
     background-size: cover;
 }
 
+table td,
+table th {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 5px !important;
+    position: relative;
+    background-clip: padding-box;
+}
+
 
 /* Default styles for light theme */
 
 #puzzleGrid {
     color: #000;
-    /* Default text color for light theme */
+}
+
+#puzzleGrid th.row-title-element,
+#puzzleGrid th.column-title-element {
+    border: 1px solid #000;
+    background-color: #fff;
 }
 
 #puzzleGrid .grid-table td {
     border: 1px solid #000;
+    background-color: #fff;
 }
 
-#puzzleGrid .row-title-element,
+#puzzleGrid th.row-title-element {
+    border-right: 3px solid #000;
+}
+
+#puzzleGrid th.column-title-element {
+    border-bottom: 3px solid #000;
+}
+
 #puzzleGrid .row-title-category,
-#puzzleGrid .column-title-element,
 #puzzleGrid .column-title-category {
-    border: 2px solid #000;
+    border: 3px solid #000;
+    background-color: #fff;
+}
+
+#puzzleGrid td.last-element-horizontal,
+#puzzleGrid th.last-element-horizontal {
+    border-right: 3px solid #000;
+    background-color: #fff;
+}
+
+#puzzleGrid td.first-element-horizontal,
+#puzzleGrid th.first-element-horizontal {
+    border-left: 3px solid #000;
+    background-color: #fff;
+}
+
+#puzzleGrid td.last-element-vertical,
+#puzzleGrid th.last-element-vertical {
+    border-bottom: 3px solid #000;
+    background-color: #fff;
+}
+
+#puzzleGrid td.first-element-vertical,
+#puzzleGrid th.first-element-vertical {
+    border-top: 3px solid #000;
+    background-color: #fff;
 }
 
 
@@ -57,39 +102,65 @@
 
 body.theme-dark #puzzleGrid {
     color: #fff;
-    /* Text color for dark theme */
+}
+
+body.theme-dark #puzzleGrid th.row-title-element,
+body.theme-dark #puzzleGrid th.column-title-element {
+    border: 1px solid #fff;
+    background-color: #000;
 }
 
 body.theme-dark #puzzleGrid .grid-table td {
     border: 1px solid #fff;
+    background-color: #000;
 }
 
-body.theme-dark #puzzleGrid .row-title-element,
+body.theme-dark #puzzleGrid th.row-title-element {
+    border-right: 3px solid #fff;
+}
+
+body.theme-dark #puzzleGrid th.column-title-element {
+    border-bottom: 3px solid #fff;
+}
+
 body.theme-dark #puzzleGrid .row-title-category,
-body.theme-dark #puzzleGrid .column-title-element,
 body.theme-dark #puzzleGrid .column-title-category {
-    border: 2px solid #fff;
+    border: 3px solid #fff;
+    background-color: #000;
+}
+
+body.theme-dark #puzzleGrid td.last-element-horizontal,
+body.theme-dark #puzzleGrid th.last-element-horizontal {
+    border-right: 3px solid #fff;
+    background-color: #000;
+}
+
+body.theme-dark #puzzleGrid td.first-element-horizontal,
+body.theme-dark #puzzleGrid th.first-element-horizontal {
+    border-left: 3px solid #fff;
+    background-color: #000;
+}
+
+body.theme-dark #puzzleGrid td.last-element-vertical,
+body.theme-dark #puzzleGrid th.last-element-vertical {
+    border-bottom: 3px solid #fff;
+    background-color: #000;
+}
+
+body.theme-dark #puzzleGrid td.first-element-vertical,
+body.theme-dark #puzzleGrid th.first-element-vertical {
+    border-top: 3px solid #fff;
+    background-color: #000;
 }
 
 .grid-table td {
     width: 30px;
     height: 30px;
-    padding: 5px;
 }
 
 .row-title-category,
 .column-title-category {
     text-align: center;
-}
-
-.row-title-element,
-.column-title-category {
-    padding: 0 15px;
-}
-
-.column-title-element,
-.row-title-category {
-    padding: 15px 0;
 }
 
 .row-title-element,
