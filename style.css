@@ -37,40 +37,38 @@
 /* Default styles for light theme */
 
 #puzzleGrid {
-    color: #fff;
+    color: #000;
     /* Default text color for light theme */
-    border-color: #fff;
-    /* Default border color for light theme */
 }
 
 #puzzleGrid .grid-table td {
-    border: 1px solid #fff;
+    border: 1px solid #000;
 }
 
 #puzzleGrid .row-title-element,
 #puzzleGrid .row-title-category,
 #puzzleGrid .column-title-element,
 #puzzleGrid .column-title-category {
-    border: 2px solid #fff;
+    border: 2px solid #000;
 }
 
 
 /* Styles for dark theme */
 
 body.theme-dark #puzzleGrid {
-    color: #000;
+    color: #fff;
     /* Text color for dark theme */
 }
 
 body.theme-dark #puzzleGrid .grid-table td {
-    border: 1px solid #000;
+    border: 1px solid #fff;
 }
 
 body.theme-dark #puzzleGrid .row-title-element,
 body.theme-dark #puzzleGrid .row-title-category,
 body.theme-dark #puzzleGrid .column-title-element,
 body.theme-dark #puzzleGrid .column-title-category {
-    border: 2px solid #000;
+    border: 2px solid #fff;
 }
 
 .grid-table td {
