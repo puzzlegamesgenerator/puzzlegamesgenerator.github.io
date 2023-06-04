@@ -89,7 +89,9 @@ function generatePuzzle() {
     gridHTML += '<th></th>';
 
     for (let i = 1; i < categoryCount; i++) {
-        gridHTML += `<th colspan="${elementCount}" class="column-title-category">Category ${i}</th>`;
+        const categoryNameInput = document.getElementById(`categoryNameInput${i}`);
+        const categoryName = categoryNameInput.value;
+        gridHTML += `<th colspan="${elementCount}" class="column-title-category">${categoryName}</th>`;
     }
 
     gridHTML += '</tr>';
@@ -101,12 +103,15 @@ function generatePuzzle() {
 
     for (let i = 1; i < categoryCount; i++) {
         for (let j = 1; j <= elementCount; j++) {
+            const categoryElementInput = document.getElementById(`categoryElementInput${i}-${j}`);
+            const categoryElement = categoryElementInput.value;
+
             if (i == 1 && j == 1) {
-                gridHTML += `<th class="column-title-element vertical-text first-element-horizontal">Category ${i} Element ${j}</th>`;
+                gridHTML += `<th class="column-title-element vertical-text first-element-horizontal">${categoryElement}</th>`;
             } else if (j == elementCount) {
-                gridHTML += `<th class="column-title-element vertical-text last-element-horizontal">Category ${i} Element ${j}</th>`;
+                gridHTML += `<th class="column-title-element vertical-text last-element-horizontal">${categoryElement}</th>`;
             } else {
-                gridHTML += `<th class="column-title-element vertical-text">Category ${i} Element ${j}</th>`;
+                gridHTML += `<th class="column-title-element vertical-text">${categoryElement}</th>`;
             }
         }
     }
@@ -115,16 +120,22 @@ function generatePuzzle() {
 
     // Generate the rows
     for (let i = categoryCount; i > 1; i--) {
+        const categoryNameInput = document.getElementById(`categoryNameInput${i}`);
+        const categoryName = categoryNameInput.value;
+
         gridHTML += '<tr>';
-        gridHTML += `<th rowspan="${categoryCount}" class="row-title-category vertical-text">Category ${i}</th>`;
+        gridHTML += `<th rowspan="${categoryCount}" class="row-title-category vertical-text">${categoryName}</th>`;
 
         for (let j = 1; j <= elementCount; j++) {
+            const categoryElementInput = document.getElementById(`categoryElementInput${i}-${j}`);
+            const categoryElement = categoryElementInput.value;
+
             if (i == categoryCount && j == 1) {
-                gridHTML += `<th class="row-title-element first-element-vertical">Category ${i} Element ${j}</th>`;
+                gridHTML += `<th class="row-title-element first-element-vertical">${categoryElement}</th>`;
             } else if (j == elementCount) {
-                gridHTML += `<th class="row-title-element last-element-vertical">Category ${i} Element ${j}</th>`;
+                gridHTML += `<th class="row-title-element last-element-vertical">${categoryElement}</th>`;
             } else {
-                gridHTML += `<th class="row-title-element">Category ${i} Element ${j}</th>`;
+                gridHTML += `<th class="row-title-element">${categoryElement}</th>`;
             }
             for (let k = 1; k <= i - 1; k++) {
                 for (let l = 1; l <= elementCount; l++) {
