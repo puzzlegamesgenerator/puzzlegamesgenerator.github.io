@@ -134,21 +134,19 @@ function generatePuzzle() {
 const generatePuzzleBtn = document.getElementById('generatePuzzleButton');
 generatePuzzleBtn.addEventListener('click', generatePuzzle);
 
-function downloadimage() {
-    /*var container = document.getElementById("image-wrap");*/
-    /*specific element on page*/
-    var container = document.getElementById("puzzleGrid");; /* full page */
-    html2canvas(container, {
-        allowTaint: true
-    }).then(function(canvas) {
+function downloadImage() {
+    const container = document.getElementById('puzzleGrid');
 
-        var link = document.createElement("a");
-        document.body.appendChild(link);
-        link.download = "html_image.jpg";
-        link.href = canvas.toDataURL();
-        link.target = '_blank';
-        link.click();
-    });
+    domtoimage.toPng(container)
+        .then(function(dataUrl) {
+            const link = document.createElement('a');
+            link.download = 'puzzle_image.png';
+            link.href = dataUrl;
+            link.click();
+        })
+        .catch(function(error) {
+            console.error('Error generating image:', error);
+        });
 }
 
 // Event listener for the "Add Your Own Background" button
