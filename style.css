@@ -1,5 +1,3 @@
-/* Add your custom styling here */
-
 .form-group {
     margin-bottom: 0;
 }
@@ -26,12 +24,59 @@
 #puzzleGrid {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 100px;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Default styles for light theme */
+
+#puzzleGrid {
+    color: #fff;
+    /* Default text color for light theme */
+    border-color: #fff;
+    /* Default border color for light theme */
+}
+
+#puzzleGrid .grid-table td {
+    border: 1px solid #fff;
+}
+
+#puzzleGrid .row-title-element,
+#puzzleGrid .row-title-category,
+#puzzleGrid .column-title-element,
+#puzzleGrid .column-title-category {
+    border: 2px solid #fff;
+}
+
+
+/* Styles for dark theme */
+
+body.theme-dark #puzzleGrid {
+    color: #000;
+    /* Text color for dark theme */
+}
+
+body.theme-dark #puzzleGrid .grid-table td {
+    border: 1px solid #000;
+}
+
+body.theme-dark #puzzleGrid .row-title-element,
+body.theme-dark #puzzleGrid .row-title-category,
+body.theme-dark #puzzleGrid .column-title-element,
+body.theme-dark #puzzleGrid .column-title-category {
+    border: 2px solid #000;
 }
 
 .grid-table td {
-    border: 1px solid #000;
     width: 30px;
     height: 30px;
+    padding: 5px;
 }
 
 .row-title-category,
@@ -53,7 +98,6 @@
 .row-title-category,
 .column-title-element,
 .column-title-category {
-    border: 2px solid #000;
     white-space: nowrap;
 }
 

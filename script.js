@@ -150,3 +150,29 @@ function downloadimage() {
         link.click();
     });
 }
+
+// Event listener for the "Add Your Own Background" button
+const backgroundImageInput = document.getElementById('backgroundImageInput');
+backgroundImageInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const puzzleGrid = document.getElementById('puzzleGrid');
+        puzzleGrid.style.backgroundImage = `url(${e.target.result})`;
+    };
+
+    reader.readAsDataURL(file);
+});
+
+// Event listener for theme radio buttons
+const lightThemeRadio = document.getElementById('lightThemeRadio');
+const darkThemeRadio = document.getElementById('darkThemeRadio');
+
+lightThemeRadio.addEventListener('change', function() {
+    document.body.classList.remove('theme-dark');
+});
+
+darkThemeRadio.addEventListener('change', function() {
+    document.body.classList.add('theme-dark');
+});
