@@ -124,7 +124,7 @@ function generatePuzzle() {
         const categoryName = categoryNameInput.value;
 
         gridHTML += '<tr>';
-        gridHTML += `<th rowspan="${categoryCount}" class="row-title-category vertical-text">${categoryName}</th>`;
+        gridHTML += `<th rowspan="${elementCount}" class="row-title-category vertical-text">${categoryName}</th>`;
 
         for (let j = 1; j <= elementCount; j++) {
             const categoryElementInput = document.getElementById(`categoryElementInput${i}-${j}`);
